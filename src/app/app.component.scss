@@ -1,0 +1,81 @@
+.box-transform {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: calc(100% + 150px);
+  height: calc(100% + 150px);
+  will-change: transform;
+  animation: bgTransform 100s linear infinite;
+  transform: translate3d(75px, -75px, 0) rotate(0.001deg);
+  background-position: 50% 50%;
+  background-size: cover;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.box-transform-wrap {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+// @media (min-width: 768px)
+.section-md {
+    padding: 60px 0;
+}
+@keyframes bgTransform {
+  25% {
+    transform: translate3d(150px, -150px, 0) scale(1.05) rotate(0.001deg);
+  }
+  75% {
+      transform: translate3d(0, 0, 0) scale(1.1) rotate(0.001deg);
+  }
+}
+
+.comets-left {
+  left: 15%;
+  animation-delay: 3.333s !important;
+}
+.comets-center {
+  left: 50%;
+}
+.comets-top {
+  left: 80%;
+  animation-delay: 6.666s !important;
+}
+.comets-long {
+  animation: cometsLong 10s infinite;
+}
+
+.comets {
+  position: absolute;
+  content: '';
+  top: 50%;
+  margin-left: -2.5px;
+  margin-top: -106px;
+  width: 5px;
+  height: 212px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transform: rotate(45deg) translate3d(0, 0, 0);
+  transform-origin: 100% 50%;
+  // animation: comets 10s infinite;
+  opacity: 0;
+}
+
+@keyframes cometsLong {
+  0% {
+    width: 0;
+    opacity: 0;
+    transform: rotate(45deg) translate3d(-20%, -400%, 0);
+  }
+  5% {
+      width: 2px;
+      opacity: 1;
+  }
+  10% {
+      width: 0;
+      opacity: 0;
+      transform: rotate(45deg) translate3d(20%, 400%, 0);
+  }
+}
