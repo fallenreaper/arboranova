@@ -11,8 +11,12 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BlogCardComponent } from './components/blog-card/blog-card.component';
 import { BlogGridComponent } from './components/blog-grid/blog-grid.component';
 import { AboutComponent } from './pages/about/about.component';
-import { ManufacturingComponent } from './pages/manufacturing/manufacturing.component';
+import { ManufacturingComponent } from './components/indy/manufacturing/manufacturing.component';
 import { AllianceComponent } from './pages/alliance/alliance.component';
+import { IndustryComponent } from './pages/industry/industry.component';
+import { ResearchComponent } from './pages/industry/research/research.component';
+import { ReactionsComponent } from './pages/industry/reactions/reactions.component';
+import { PiComponent } from './pages/industry/pi/pi.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +30,10 @@ import { AllianceComponent } from './pages/alliance/alliance.component';
     AboutComponent,
     ManufacturingComponent,
     AllianceComponent,
+    IndustryComponent,
+    ResearchComponent,
+    ReactionsComponent,
+    PiComponent,
   ],
   imports: [
     BrowserModule,
