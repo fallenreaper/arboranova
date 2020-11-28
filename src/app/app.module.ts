@@ -10,6 +10,8 @@ import { MetricCardComponent } from './components/metric-card/metric-card.compon
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BlogCardComponent } from './components/blog-card/blog-card.component';
 import { BlogGridComponent } from './components/blog-grid/blog-grid.component';
+import { AboutComponent } from './components/about/about.component';
+import { ManufacturingComponent } from './components/indy/manufacturing/manufacturing.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { BlogGridComponent } from './components/blog-grid/blog-grid.component';
     MetricCardComponent,
     BlogCardComponent,
     BlogGridComponent,
+    AboutComponent,
+    ManufacturingComponent,
   ],
   imports: [
     BrowserModule,

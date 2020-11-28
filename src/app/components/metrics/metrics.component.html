@@ -1,12 +1,5 @@
 <section>
   <div>
-    <app-metric-card [title]="'sample'" [count]="14"></app-metric-card>
-    <app-metric-card [title]="'sample'" [count]="14"></app-metric-card>
-    <app-metric-card [title]="'sample'" [count]="14"></app-metric-card>
-    <app-metric-card [title]="'sample'" [count]="14"></app-metric-card>
-    <app-metric-card [title]="'sample'" [count]="14"></app-metric-card>
-    <app-metric-card [title]="'sample'" [count]="14"></app-metric-card>
-    <app-metric-card [title]="'sample'" [count]="14"></app-metric-card>
-    <app-metric-card [title]="'sample'" [count]="14"></app-metric-card>
+    <app-metric-card *ngFor="let card of metrics" [title]="card.name" [count]="card.count" [icon]="card.icon"></app-metric-card>
   </div>  
 </section>

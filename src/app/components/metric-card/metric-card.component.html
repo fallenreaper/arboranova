@@ -1,7 +1,7 @@
 <div class="text-center" style="padding:20px;">
   <div class="counter-classic">
     <div class="counter-classic-icon mdi">
-      <fa-icon [icon]="icon" style="font-size:24pt;"></fa-icon>
+      <fa-icon [icon]="icon || DEFAULT_ICON" style="font-size:24pt;"></fa-icon>
     </div>
     <div class="counter-classic-decor"></div>
     <h2 class="counter-classic-number"><span class="counter animated">{{count}}</span>

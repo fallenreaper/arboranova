@@ -1,11 +1,11 @@
 <div class="h mb-2">
-  <div *ngFor="let blog of blogs; let index = index">
+  <div *ngFor="let blog of blogs; let index = index" [style]="s">
     <app-blog-card  [postDate]="blog.postDate"
                     [category]="blog.category"
                     [title]="blog.title"
                     [content]="blog.content"
                     [link]="blog.link"
     ></app-blog-card>
-    <div *ngIf="index % 2 == 0" class="w-100"></div>
+    <!-- <div *ngIf="index % numColumns === 0" class="w-100"></div> -->
   </div>
 </div>

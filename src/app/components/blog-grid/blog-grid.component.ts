@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-blog-grid',
@@ -6,7 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./blog-grid.component.scss']
 })
 export class BlogGridComponent implements OnInit {
-
+  private _numColumns = 2;
+  @Input() set numColumns (val : number) {
+    this._numColumns = val
+  }
+  get numColumns (){return this._numColumns}
+  get s () {
+    return {
+      width: `${(100 / this._numColumns) - 2}%`
+    }
+  }
   blogs = [
     {
       postDate: new Date(),

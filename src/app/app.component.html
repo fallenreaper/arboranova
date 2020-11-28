@@ -1,17 +1,17 @@
 <div class="header navbar-expand-lg navbar navbar-dark bg-dark">
-  <div class="navbar-brand hover" (click)="home()">Arbora Nova</div>
+  <div class="navbar-brand hover" [routerLink]="['/']">Arbora Nova</div>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
           <!-- I will want a way to assign the active class dynamically -->
-          <li class="nav-item active">
-              <a class="nav-link" href="#">Home</a>
+          <li class="nav-item">
+              <a class="nav-link" href="#" [routerLink]="['/']" routerLinkActive="router-link-active">Home</a>
           </li>
-          <!--<li class="nav-item">-->
-              <!--<a class="nav-link" href="#">Features</a>-->
-          <!--</li>-->
+          <li class="nav-item">
+              <a class="nav-link" href="#" [routerLink]="['/about']" routerLinkActive="router-link-active">About</a>
+          </li>
           <!--<li class="nav-item">-->
               <!--<a class="nav-link" href="#">Pricing</a>-->
           <!--</li>-->
@@ -38,8 +38,6 @@
   <div class="comets comets-center comets-long"></div>
   <div class="comets comets-top comets-long"></div>
 </section>
-<app-metrics></app-metrics>
-<app-blog-grid></app-blog-grid>
   <router-outlet></router-outlet>
 </div>
 <div class="footer">
