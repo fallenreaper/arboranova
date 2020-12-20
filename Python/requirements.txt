@@ -1,0 +1,5 @@
+mysql-connector-python
+connexion
+connexion[swagger-ui]
+flask
+flask-cors

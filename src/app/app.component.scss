@@ -2,6 +2,45 @@
   cursor: pointer;
 }
 
+// #footer {
+//   color: #6c757d;
+//   bottom: 0px;
+//   height: 50px;
+//   position: fixed;
+//   width: 100%;
+//   background: var(--inner-color);//linear-gradient(var(--inner-color), var(--inner-color), var(--outer-color));
+//   border-top: solid 1px black;
+
+//   > div {
+//       position: absolute;
+//       top: 50%;
+//   }
+
+//   #footer-center {
+//       left: 50%;
+//       transform: translate(-50%, -50%);
+      
+//   }
+//   #footer-left {
+//       float: left;
+//       left: 0;
+//       transform: translate(0, -50%);
+
+//       span {
+//           margin-left: 20px;
+//       }
+//   }
+//   #footer-right {
+//       float: right;
+//       right: 0;
+//       transform: translate(0, -50%);
+
+//       span {
+//           margin-right: 20px;
+//       }
+//   }
+// }
+
 // Space Background Image CSS Start. //
 
 .box-transform {

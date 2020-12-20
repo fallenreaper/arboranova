@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
-
+  materials = ["hello", "world"]
   constructor() { }
 
   ngOnInit(): void {

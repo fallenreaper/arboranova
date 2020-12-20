@@ -1,0 +1,4 @@
+<p>build works!</p>
+<input (change)="getMaterials($event.value)"/>
+
+<div *ngFor="let item of materials">{{item.name}}: {{item.quantity}}</div>

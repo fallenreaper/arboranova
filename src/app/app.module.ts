@@ -17,6 +17,11 @@ import { IndustryComponent } from './pages/industry/industry.component';
 import { ResearchComponent } from './pages/industry/research/research.component';
 import { ReactionsComponent } from './pages/industry/reactions/reactions.component';
 import { PiComponent } from './pages/industry/pi/pi.component';
+import { SelectComponent } from './components/inputs/select/select.component';
+import { BlueprintComponent } from './components/indy/blueprint/blueprint.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { BuildComponent } from './pages/industry/build/build.component';
 
 @NgModule({
   declarations: [
@@ -34,11 +39,17 @@ import { PiComponent } from './pages/industry/pi/pi.component';
     ResearchComponent,
     ReactionsComponent,
     PiComponent,
+    SelectComponent,
+    BlueprintComponent,
+    BuildComponent
   ],
   imports: [
     BrowserModule,
+    // CommonModule,
+    ReactiveFormsModule,
     FontAwesomeModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

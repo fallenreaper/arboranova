@@ -1,0 +1,103 @@
+swagger: "2.0"
+info:
+    description: This Swagger file helps define the EveOnline endpoints
+    version: "1.0.0"
+    title: EveOnline Swagger REST
+consumes:
+    - application/json
+produces:
+    - application/json
+basePath: /api
+
+paths:
+    /blueprint:
+        get:
+            operationId: init.get_base_material_requirements
+            tags: [Item]
+            summary: Get Item Metadata.
+            parameters:
+                - $ref: '#/parameters/material_level'
+                - $ref: '#/parameters/time_level'
+                - $ref: '#/parameters/main_structure_material_bonus'
+                - $ref: '#/parameters/secondary_structure_material_bonus'
+                - $ref: '#/parameters/item_name'
+                - $ref: '#/parameters/number_to_make'
+            responses:
+                200:
+                    description: "Successful Item Fetch"
+                    schema:
+                        $ref: '#/definitions/ItemMap'
+parameters:
+    material_level:
+        in: query
+        name: material
+        required: false
+        type: integer
+    time_level:
+        in: query
+        name: time
+        required: false
+        type: integer
+    main_structure_material_bonus:
+        in: query
+        name: main_structure_bonus
+        required: false
+        type: number
+    secondary_structure_material_bonus:
+        in: query
+        name: component_structure_bonus
+        required: false
+        type: number
+    item_name:
+        in: query
+        name: item
+        required: true
+        type: string
+    number_to_make:
+        in: query
+        name: count
+        required: false
+        type: integer
+
+definitions:
+    ItemMap:
+        type: object
+    InvType:
+        type: object
+        properties:
+            typeId:
+                type: integer
+                description: Identifier for InvType
+            groupId:
+                type: integer
+                description: Which Group does InvType belong to
+            typeName:
+                type: string
+                description: Item Name
+            description:
+                type: string
+                description: Item Description
+            mass:
+                type: number
+            volume:
+                type: number
+            capacity:
+                type: number
+            portionSize:
+                type: integer
+            raceId:
+                type: integer
+            basePrice:
+                type: number
+            published:
+                type: boolean
+            marketGroupId:
+                type: integer
+            iconId:
+                type: integer
+            soundId:
+                type: integer
+            graphicId:
+                type: integer
+            
+            

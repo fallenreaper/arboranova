@@ -1,0 +1,47 @@
+<mat-progress-spinner *ngIf="showSpinner" diameter="20" aria-label="loading select datasource" mode="indeterminate">
+</mat-progress-spinner>
+<mat-select ngDefaultControl *ngIf="!showSpinner" [formControl]="fc" [multiple]="multiple" [disabled]="disabled"
+    [required]="required" [placeholder]="placeholder">
+
+    <mat-select-trigger *ngIf="multiple">
+        <span *ngIf="useTranslateService">
+            {{valueString | translate}}
+        </span>
+        <span *ngIf="!useTranslateService">
+            {{valueString}}
+        </span>
+
+        <span *ngIf="value?.length > 1" class="additional-selection">
+            (+{{value.length - 1}} {{value?.length === 2 ? 'other' : 'others'}})
+        </span>
+    </mat-select-trigger>
+
+    <mat-select-trigger *ngIf="!multiple">
+        <span *ngIf="useTranslateService">
+            {{valueString | translate}}
+        </span>
+        <span *ngIf="!useTranslateService">
+            {{valueString}}
+        </span>
+    </mat-select-trigger>
+
+    <input matInput [placeholder]="placeholder" *ngIf="allowSearch" class="searchbox"
+        (click)="$event.preventDefault(); $event.stopPropagation();" (keyup)="onSearchData($event.target.value)" />
+
+    <mat-option *ngFor="let item of filteredDataArray" [value]="item">
+        {{ 
+            useTranslateService === false ? 
+                (useProperty !== null ? item[useProperty] : item):
+                (useProperty !== null ? item[useProperty] : item)|translate
+        }}
+    </mat-option>
+</mat-select>
+<mat-chip-list *ngIf="!showSpinner && showChips" class="mat-chip-list-stacked">
+    <mat-chip *ngFor="let item of value" (click)="deselectItem(item)">
+        {{ 
+            useTranslateService === false ? 
+                (useProperty !== null ? item[useProperty] : item):
+                (useProperty !== null ? item[useProperty] : item)|translate
+        }}
+    </mat-chip>
+</mat-chip-list>
