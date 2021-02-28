@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements OnInit {
-  content = `Weclome to Arbora Nova, your NEW HOME
+  text = `Weclome to Arbora Nova, your NEW HOME
 
   Small but experience we are the corporation to help you feel the family like enviroment you NEED in order to face the steep learning curve of EvE: Online
   Arbora Nova is recruiting players who want to learn and play the game in a way that noone will push them around, Arbora Nova currently is located at Null Sec following the alliance Reckless Contingency, and looking into claiming areas at Null Sec. If you are interested in all of that, feel free to contact us here Discord Link 2 and in our in game Channel {ABNA.} Recruit
@@ -28,8 +28,9 @@ export class AboutComponent implements OnInit {
   
   Honor and Serve,
   Command Team`;
+  content = []
   constructor() { 
-    this.content = this.content.split("\n").join("<br/>")
+    this.content = this.text.split("\n")
   }
 
   ngOnInit(): void {
