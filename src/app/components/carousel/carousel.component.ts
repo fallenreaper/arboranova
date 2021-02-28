@@ -8,6 +8,7 @@ import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 })
 export class CarouselComponent implements OnInit {
   @Input() images = [];
+  @Input() maxWidth = '700px'
   constructor(config: NgbCarouselConfig) { 
     config.interval = 5000;
     config.wrap = true;

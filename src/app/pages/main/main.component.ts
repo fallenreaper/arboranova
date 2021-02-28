@@ -25,6 +25,10 @@ export class MainComponent implements OnInit {
       name: 'Gila walks away from NPC Explosions',
       src: 'assets/images/gila-michael-bay.png',
     },
+    {
+      name: 'Ducklings following mama',
+      src: 'assets/images/duckling.png'
+    }
   ];
   constructor() {}
 
