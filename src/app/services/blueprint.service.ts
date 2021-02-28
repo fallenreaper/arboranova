@@ -18,14 +18,22 @@ export class BlueprintService {
 
   }
 
-  getBlueprintMaterialsByName(name: string) {
-    return this._http.get("http://localhost:5000/api/blueprint?item=Orca").toPromise().then( data => {
+  getBlueprintMetadatabyName(name: string) {
+    return this._http.get(`http://localhost:5000/api/blueprint?name=${name}`).toPromise().then( data => {
       console.log("Data", data)
-      const bp = Blueprint.fromJson({
-        name,
-        requiredItems: data
-      })
+      const bp = Blueprint.fromJson(data)
       return bp;
+    })
+  }
+
+  getBlueprintMaterialsByName(name: string) {
+    return this._http.get(`http://localhost:5000/api/blueprintmaterials?name=${name}`).toPromise().then( data => {
+      console.log("Data", data)
+      // const bp = Blueprint.fromJson({
+      //   name,
+      //   requiredItems: data
+      // })
+      return data;
     })
   }
 }

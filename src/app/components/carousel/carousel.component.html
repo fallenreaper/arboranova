@@ -1,0 +1,58 @@
+<!-- <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+  <ol class="carousel-indicators">
+    <li *ngFor="let img of images; index as idx;" data-target="#myCarousel" data-slide-to="{{idx}}" class="active"></li>
+  </ol>
+
+  <div class="carousel-inner">
+    <div *ngFor="let img of images" class="carousel-item active">
+      <img [src]="img.src" [alt]="img.name" class="dimensions" />
+    </div>
+  </div>
+
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div> -->
+
+<div class='container-fluid'>
+  <div class='col-12'>  
+      <ngb-carousel>  
+          <ng-template ngbSlide *ngFor="let img of images">  
+              <img [src]="img.src" [alt]="img.name" class="dimensions">  
+              <div class="carousel-caption">  
+                  <span>{{img.name}}</span>  
+              </div>  
+          </ng-template>  
+          <!-- <ng-template ngbSlide>  
+              <img src="../assets/Images/m1.jpg" alt="Bangalore Metro">  
+              <div class="carousel-caption">  
+                  <h3 style="color: yellow">Bangalore Metro</h3>  
+              </div>  
+          </ng-template>  
+          <ng-template ngbSlide>  
+              <img src="../assets/Images/m4.jpg" alt="Channai Metro">  
+              <div class="carousel-caption">  
+                  <h3 style="color: yellow">Channai Metro</h3>  
+              </div>  
+          </ng-template>  
+          <ng-template ngbSlide>  
+              <img src="../assets/Images/m5.jpg" alt="Jaipur Metro">  
+              <div class="carousel-caption">  
+                  <h3 style="color: yellow">Jaipur Metro</h3>  
+              </div>  
+          </ng-template>   -->
+          <!-- <ng-template ngbSlide>  
+              <img src="../assets/Images/m3.jpg" alt="Mumbai Metro">  
+              <div class="carousel-caption">  
+                  <h3 style="color: yellow">Mumbai Metro</h3>  
+              </div>  
+          </ng-template>   -->
+      </ngb-carousel>  
+  </div>  
+
+</div>  

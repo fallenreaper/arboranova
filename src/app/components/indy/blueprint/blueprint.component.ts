@@ -6,10 +6,19 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./blueprint.component.scss']
 })
 export class BlueprintComponent implements OnInit {
-  @Input() id = null;
+  @Input() blueprint = null;
+  computedItems = {}
+  Object = Object
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  adjustBlueprintME(materialLevel: number) {
+    this.blueprint.materialEffeciencyLevel = materialLevel
+    this.blueprint.computedMineralCost().forEach( item => {
+      this.computedItems[item.id] = item;
+    })
+    console.log(this.computedItems)
+  }
 }

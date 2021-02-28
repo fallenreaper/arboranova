@@ -1,0 +1,16 @@
+table {
+  margin-left: auto;
+  margin-right: auto;
+}
+tr {
+  td:first-child { 
+    text-align: left;
+  }
+  td:nth-child(2), td:nth-child(3) {
+    text-align: right;
+  }
+}
+
+input {
+  color: black;
+}

@@ -1,4 +1,6 @@
-<p>build works!</p>
-<input (change)="getMaterials($event.value)"/>
 
-<div *ngFor="let item of materials">{{item.name}}: {{item.quantity}}</div>
+<input (change)="getBlueprint($event.target.value)"/>
+
+<!-- <div *ngFor="let item of materials">{{item.name}}: {{item.quantity}}</div> -->
+
+<app-blueprint *ngIf="bp !== null" [blueprint]="bp"></app-blueprint>

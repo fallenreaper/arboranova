@@ -17,7 +17,7 @@ export class Blueprint {
 
   materialEffeciencyLevel = 0;
   timeEffeciencyLevel = 0;
-  requiredItems: {id:number, name:string, quantity: number}[] = [];
+  requiredItems: {id:number, name:string, quantity: number, blueprint: Blueprint}[] = [];
 
 
   toJson = () => ({
@@ -59,12 +59,22 @@ export class Blueprint {
     bp.graphicId = js['graphicId'] || -1;
     bp.materialEffeciencyLevel = js['materialEffeciencyLevel'] = -1,
     bp.timeEffeciencyLevel = js['timeEffeciencyLevel'] || '',
-    bp.requiredItems = js['requiredItems'] || []
+    bp.requiredItems = (js['requiredItems'] || []).map( item => {
+      if (item.blueprint !== null) item.blueprint = Blueprint.fromJson(item.blueprint);
+      return item;
+    });
     return bp;
   }
 
-  computedMineralCost = (): {}[] => this.requiredItems.map( item => {
-    item.quantity = item.quantity * ( 1 - 0.01 * this.materialEffeciencyLevel);
-    return item;
-  })
+  computedMineralCost = (): {}[] => {
+    const _computed = this.requiredItems.map( item => {
+    const quant = Math.floor(item.quantity * ( 1 - 0.01 * this.materialEffeciencyLevel ));
+    return {
+      "id": item.id,
+      "quantity": quant,
+      "blueprint": item.blueprint
+    };
+    })
+    return _computed
+  }
 }

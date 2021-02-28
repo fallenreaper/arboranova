@@ -22,6 +22,8 @@ import { BlueprintComponent } from './components/indy/blueprint/blueprint.compon
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BuildComponent } from './pages/industry/build/build.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 
 @NgModule({
   declarations: [
@@ -41,7 +43,8 @@ import { BuildComponent } from './pages/industry/build/build.component';
     PiComponent,
     SelectComponent,
     BlueprintComponent,
-    BuildComponent
+    BuildComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +52,8 @@ import { BuildComponent } from './pages/industry/build/build.component';
     ReactiveFormsModule,
     FontAwesomeModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,24 +1,33 @@
-import { Component, OnInit } from '@angular/core';
-import {BlueprintService} from 'src/app/services/blueprint.service'
+import { stringify } from '@angular/compiler/src/util';
+import { Component, EventEmitter, OnInit } from '@angular/core';
+import { Blueprint } from 'src/app/classes/blueprint';
+import { BlueprintService } from 'src/app/services/blueprint.service';
 @Component({
   selector: 'app-build',
   templateUrl: './build.component.html',
-  styleUrls: ['./build.component.scss']
+  styleUrls: ['./build.component.scss'],
 })
 export class BuildComponent implements OnInit {
-  materials = []
-  constructor(private _bpService: BlueprintService) { }
+  bp: Blueprint = null;
+  constructor(private _bpService: BlueprintService) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-    async getMaterials(name: string){
-    console.log(`Attempting to get Materials for ${name}`)
+  async getBlueprint(name: string) {
+    console.log(`Attempting to get Materials for ${name}`);
     // this._bpService
-    let bp;
-    await Promise.all([ this._bpService.getBlueprintMaterialsByName(name).then( _bp => { console.log("TEst", _bp); bp = _bp})])
-    console.log("Result", bp)
-    this.materials = bp.requiredItems
+    let _bp: Blueprint = null;
+    await this._bpService.getBlueprintMetadatabyName(name).then((data) => {
+      _bp = Blueprint.fromJson(data);
+    });
+    // await this._bpService
+    //   .getBlueprintMaterialsByName(name)
+    //   .then((result: { id: number; name: string; quantity: number }[]) => {
+    //     console.log('TEst', result);
+    //     // bp = new Blueprint()
+    //     _bp.requiredItems = result;
+    //   });
+    this.bp = _bp
+    console.log('Result', this.bp);
   }
-
 }
